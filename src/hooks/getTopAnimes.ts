@@ -1,7 +1,7 @@
-"use client"; // Para Next.js App Router
+"use client";
 import { useState, useEffect } from "react";
 
-export function useJikanFetch<T>(endpoint: string) {
+export const useJikanFetch = (endpoint: string) => {
   const [data, setData] = useState<any>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -27,4 +27,4 @@ export function useJikanFetch<T>(endpoint: string) {
   }, [endpoint]); // Se ejecuta cuando `endpoint` cambia
 
   return { data, loading, error };
-}
+};
