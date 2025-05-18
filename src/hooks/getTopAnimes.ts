@@ -1,8 +1,8 @@
 "use client";
 import { useState, useEffect } from "react";
 
-export const useJikanFetch = (endpoint: string) => {
-  const [data, setData] = useState<any>(null);
+export const useJikanFetch = <T>(endpoint: string) => {
+  const [data, setData] = useState<T | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -14,7 +14,7 @@ export const useJikanFetch = (endpoint: string) => {
 
         if (!response.ok) throw new Error("Error al cargar los datos");
 
-        const jsonData = await response.json();
+        const jsonData: T = await response.json();
         setData(jsonData);
       } catch (err) {
         setError(err instanceof Error ? err.message : "Error desconocido");
@@ -24,7 +24,7 @@ export const useJikanFetch = (endpoint: string) => {
     };
 
     fetchData();
-  }, [endpoint]); // Se ejecuta cuando `endpoint` cambia
+  }, [endpoint]);
 
   return { data, loading, error };
 };
