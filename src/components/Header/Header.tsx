@@ -9,7 +9,7 @@ const Header = () => {
   const { isMobile } = useDeviceDetector();
   
   return (
-    <header className="absolute bottom-0 md:sticky md:top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <header className="fixed bottom-0 md:sticky md:top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <TopBar />
       {isMobile ? <MainHeaderMobile /> : <MainHeaderDesktop />}
     </header>
