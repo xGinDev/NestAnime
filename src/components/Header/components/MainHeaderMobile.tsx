@@ -38,11 +38,11 @@ const MainHeaderMobile = () => {
       icon: <GoSearch size={24} />,
       url: "/search",
     },
-    {
+/*     {
       title: "Favorites",
       icon: <IoBookmarkOutline size={24} />,
       url: "/favorites",
-    },
+    }, */
     {
       title: "Menú",
       icon: <IoMenuOutline size={24} />,
@@ -53,7 +53,7 @@ const MainHeaderMobile = () => {
   ];
 
   return (
-    <div className="p-4 flex justify-around gap-4 bg-black rounded-t-2xl text-white">
+    <div className="p-4 flex justify-around gap-4 bg-secondary rounded-t-2xl text-white">
       {DataMobile.map((data: DataMobileProps, index: number) =>
         data.isComponent ? (
           <div key={index}>{data.component}</div>

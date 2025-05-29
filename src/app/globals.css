@@ -41,6 +41,9 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
+  --primary: #2f323f;
+  --secondary: #64647c;
+  --accent: #c49f3b;
 }
 
 :root {
@@ -76,6 +79,9 @@
   --sidebar-ring: oklch(0.708 0 0);
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
+  --primary: #2f323f;
+  --secondary: #64647c;
+  --accent: #c49f3b;
 }
 
 .dark {
@@ -110,6 +116,9 @@
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.556 0 0);
+  --primary: #2f323f;
+  --secondary: #64647c;
+  --accent: #c49f3b;
 }
 
 @layer base {
