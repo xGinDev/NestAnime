@@ -1,22 +1,25 @@
 "use client";
-import { useJikanFetch } from "@/hooks/getTopAnimes";
+import { getApi } from "@/hooks/getTopAnimes";
+import Card from "@/components/Globals/Card";
 
 export default function Home() {
-  const { data, loading, error } = useJikanFetch<{
-    data: Array<{ mal_id: number; title: string }>;
-  }>("/top/anime");
+  const { data, loading, error } = getApi<{ data: Array<{ title: string, cover: string, number: number }> }>(
+    "/list/latest-episodes"
+  );
 
   if (loading) return <p>Cargando...</p>;
   if (error) return <p>Error: {error}</p>;
 
   return (
     <div>
-      <h1>Top Anime</h1>
-      <ul>
-        {data?.data.map((anime) => (
-          <li key={anime.mal_id}>{anime.title}</li>
-        ))}
-      </ul>
+      <h1 className="text-2xl font-bold uppercase mb-2 text-[#eaeae0]">Últimos episodios</h1>
+      <div>
+        <ul className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+          {data?.data.map((anime) => (
+            <Card key={anime.title} title={anime.title} image={anime.cover} episodes={anime.number} />
+          ))}
+        </ul>
+      </div>
     </div>
   );
 }

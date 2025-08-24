@@ -5,6 +5,9 @@ const nextConfig: NextConfig = {
   devIndicators: {
     position: "top-right"
   },
+  images: {
+    domains: ["animeflv.net"],
+  },
 };
 
 export default nextConfig;
