@@ -3,10 +3,15 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   /* config options here */
   devIndicators: {
-    position: "top-right"
+    position: "top-right",
   },
   images: {
-    domains: ["animeflv.net"],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "animeflv.net",
+      },
+    ],
   },
 };
 
