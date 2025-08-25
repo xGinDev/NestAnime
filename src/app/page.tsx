@@ -1,16 +1,14 @@
 "use client";
-import { getApi } from "@/hooks/getTopAnimes";
 import Card from "@/components/Globals/Card";
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
 } from "@/components/ui/carousel";
+import { useApi } from "@/hooks/useApi";
 
 export default function Home() {
-  const { data, loading, error } = getApi<{
+  const { data, loading, error } = useApi<{
     data: Array<{ title: string; cover: string; number: number; slug: string }>;
   }>("/list/latest-episodes");
 
@@ -39,8 +37,6 @@ export default function Home() {
               </CarouselItem>
             ))}
           </CarouselContent>
-          {/*           <CarouselPrevious />
-          <CarouselNext /> */}
         </Carousel>
       </div>
     </div>

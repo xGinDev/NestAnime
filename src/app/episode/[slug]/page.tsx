@@ -1,10 +1,10 @@
 "use client";
-import { getApi } from "@/hooks/getTopAnimes";
+import { useApi } from "@/hooks/useApi";
 import { useParams } from "next/navigation";
 
 export default function SeeAnime() {
   const params = useParams();
-  const { data, loading, error } = getApi<{
+  const { data, loading, error } = useApi<{
     data: {
       title: string;
       number: number;
