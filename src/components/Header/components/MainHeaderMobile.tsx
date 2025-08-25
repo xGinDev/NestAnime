@@ -8,7 +8,7 @@ import Link from "next/link";
 
 interface DataMobileProps {
     title: string
-    icon: any
+    icon: React.ReactNode
     url: string
 }
 
