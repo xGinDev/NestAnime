@@ -1,19 +1,11 @@
-"use client";
-import React from "react";
-/* import TopBar from "./components/TopBar"; */
-import MainHeaderDesktop from "./components/MainHeaderDesktop";
-import MainHeaderMobile from "./components/MainHeaderMobile";
-import { useDeviceDetector } from "@/hooks/deviceDetector";
+import { HeaderDesktop } from "./HeaderDesktop";
+import { TopBar } from "./TopBar";
 
-const Header = () => {
-  const { isMobile } = useDeviceDetector();
-  
+export const Header = () => {
   return (
-    <header className="fixed bottom-0 md:sticky md:top-0 z-50 w-full border-b-3 border-[#6D1D7D] lg:bg-[#272727] lg:backdrop-blur lg:supports-[backdrop-filter]:bg-[#272727] lg:py-2">
-      {/* <TopBar /> */}
-      {isMobile ? <MainHeaderMobile /> : <MainHeaderDesktop />}
+    <header className="border-b-2 border-[#6D1D7D]">
+      <TopBar />
+      <HeaderDesktop />
     </header>
   );
 };
-
-export default Header;
