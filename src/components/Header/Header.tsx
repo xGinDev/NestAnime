@@ -1,11 +1,20 @@
+"use client";
+import { useDeviceDetector } from "@/hooks/deviceDetector";
 import { HeaderDesktop } from "./HeaderDesktop";
+import { HeaderMobile } from "./HeaderMobile";
 import { TopBar } from "./TopBar";
 
 export const Header = () => {
+  const isMobile = useDeviceDetector();
+
+  if (isMobile === null) {
+    return null;
+  }
+
   return (
-    <header className="border-b-2 border-[#6D1D7D]">
+    <header className="fixed bottom-0 w-full border-b-2 border-[#6D1D7D] px-2 py-3 lg:p-0 lg:top-0 lg:bottom-auto">
       <TopBar />
-      <HeaderDesktop />
+      {isMobile ? <HeaderMobile /> : <HeaderDesktop />}
     </header>
   );
 };

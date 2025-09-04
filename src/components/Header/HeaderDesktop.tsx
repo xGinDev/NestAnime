@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export const HeaderDesktop = () => {
   return (
-    <div className="lg:max-w-7xl lg:mx-auto lg:p-4">
+    <div className="hidden lg:flex lg:max-w-7xl lg:mx-auto lg:p-4">
       <Link href="/">
         <Image src={Logo} alt="Logo" width={150} height={150} />
       </Link>
