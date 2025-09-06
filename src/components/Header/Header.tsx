@@ -12,7 +12,7 @@ export const Header = () => {
   }
 
   return (
-    <header className="fixed bottom-0 w-full border-b-2 border-[#6D1D7D] px-2 py-3 lg:p-0 lg:top-0 lg:bottom-auto">
+    <header className={`fixed bottom-0 w-full border-b-2 border-[#6D1D7D] lg:px-2 lg:py-3 lg:p-0 lg:top-0 lg:bottom-auto z-10 bg-black`}>
       <TopBar />
       {isMobile ? <HeaderMobile /> : <HeaderDesktop />}
     </header>
