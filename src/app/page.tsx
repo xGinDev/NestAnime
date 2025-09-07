@@ -18,6 +18,8 @@ export default function Home() {
 
   if (loading) return <Skeleton className="h-40" />;
 
+  if (error) return <p>Error al cargar los episodios</p>;
+
   return (
     <div className="relative">
       <Title title="Últimos episodios" />

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 interface Props {
   title: string;
@@ -9,7 +10,7 @@ interface Props {
 
 export const Card = ({ title, cover, number, slug }: Props) => {
   return (
-    <div className="relative">
+    <Link href={`/episode/${slug}`} className="relative">
       <Image
         src={cover}
         alt={title}
@@ -22,7 +23,9 @@ export const Card = ({ title, cover, number, slug }: Props) => {
       <h2 className="text-xl font-bold text-[#eaeae0] ellipsis overflow-hidden line-clamp-2 absolute bottom-2 left-2">
         {title}
       </h2>
-      <p className="text-sm font-semibold text-[#eaeae0] absolute top-2 right-2 bg-[#6D1D7D] px-2 py-1 rounded">Episodio {number}</p>
-    </div>
+      <p className="text-sm font-semibold text-[#eaeae0] absolute top-2 right-2 bg-[#6D1D7D] px-2 py-1 rounded">
+        Episodio {number}
+      </p>
+    </Link>
   );
 };

@@ -1,4 +1,4 @@
-// components/search/SearchMobile.tsx
+/* // components/search/SearchMobile.tsx
 "use client";
 import { useState, useEffect } from "react";
 import { Skeleton } from "@/components/ui/skeleton";
@@ -185,3 +185,4 @@ export const SearchMobile = () => {
     </div>
   );
 };
+ */
