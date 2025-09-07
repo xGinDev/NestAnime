@@ -22,7 +22,7 @@ export const Breadcrumbs = ({ link, title, current }: Props) => {
             href="/"
             className="text-[#eaeae0] hover:text-[#6D1D7D]"
           >
-            Home
+            Inicio
           </BreadcrumbLink>
         </BreadcrumbItem>
         <BreadcrumbSeparator />

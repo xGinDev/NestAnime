@@ -1,7 +1,14 @@
 import { create } from "zustand";
 
+interface IFavAnime {
+  id: string;
+  title: string;
+  cover: string;
+  slug: string;
+}
+
 interface AppState {
-  favAnime: any[];
+  favAnime: IFavAnime[];
   openSearch: boolean;
   setOpenSearch: (openSearch: boolean) => void;
 }
